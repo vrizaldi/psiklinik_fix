@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Home\NewsController;
+use App\Http\Controllers\Home\ConsultantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
     Route::get('/news', [NewsController::class, 'serve'])->name('home.news');
     Route::get('/news/{id}', [NewsController::class, 'showContent'])->name('home.news.post');
+    Route::get('/consultants', [ConsultantController::class, 'serve'])->name('home.consultants');
+    Route::get('/consultants/{email}', [ConsultantController::class, 'showConsultant'])->name('home.consultants.consult');
     Route::get('/', function () {
         return redirect()->route('home.news');
     })->name('home');

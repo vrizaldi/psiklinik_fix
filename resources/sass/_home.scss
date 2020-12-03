@@ -20,11 +20,11 @@
     z-index: 999;
 
     a {
-        color: $light-grey;
+        color: $light-grey !important;
         font-size: 1.5rem;
 
         &:active, &:hover {
-            color: black;
+            color: $color-primary !important;
         }
     }
 }

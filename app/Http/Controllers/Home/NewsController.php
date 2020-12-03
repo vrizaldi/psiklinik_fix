@@ -20,6 +20,7 @@ class NewsController extends Controller
 
     public function showContent($id) {
         $blog = Blog::find($id);
+        if(is_null($blog)) return abort(404);
         return view('home.newspost', ['blog' => $blog]);
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('section-title')
-    News
+    Articles
 @endsection
 
 @section('content')

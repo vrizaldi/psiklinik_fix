@@ -19,7 +19,7 @@
         <a href="{{route('home.news')}}">
             <i class="fas fa-newspaper"></i>
         </a>
-        <a href="#">
+        <a href="{{route('home.consultants')}}">
             <i class="fas fa-stethoscope"></i>
         </a>
         <a href="#">

@@ -10906,8 +10906,8 @@ a.text-dark:focus {
 a,
 a:active,
 a:visited {
-  color: black;
-  text-decoration: none;
+  color: black !important;
+  text-decoration: none !important;
 }
 
 .navbar-header {
@@ -10932,13 +10932,13 @@ a:visited {
 }
 
 .navbar-footer a {
-  color: #e6e6e6;
+  color: #e6e6e6 !important;
   font-size: 1.5rem;
 }
 
 .navbar-footer a:active,
 .navbar-footer a:hover {
-  color: black;
+  color: #517899 !important;
 }
 
 .content {
@@ -10951,8 +10951,9 @@ a:visited {
   margin: auto;
 }
 
-.news .blog-search button {
-  border-radius: 0.4rem;
+.news .blog-search button,
+.news .blog-search input {
+  border-radius: 3rem;
 }
 
 .news .blog-post {
@@ -10967,11 +10968,61 @@ a:visited {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
-  box-shadow: 0px 0px 6px -1px rgba(46, 46, 46, 0.55);
 }
 
 .news .blog-post p {
   font-size: 0.8rem;
+}
+
+.consultants .consultant-search {
+  width: 90%;
+  margin: auto;
+}
+
+.consultants .consultant-search button,
+.consultants .consultant-search input {
+  border-radius: 3rem;
+}
+
+.consultants .consultant-type {
+  width: 90%;
+  margin: auto;
+}
+
+.consultants .consultant-type .consultant-list {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.consultants .consultant-type .consultant-list .consultant {
+  margin-right: 1rem;
+}
+
+.consultants .consultant-type .consultant-list .consultant img {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.consultants .consultant-type .consultant-list .consultant p {
+  font-size: 0.6rem;
+}
+
+.consultants .consultant-profile {
+  width: 90%;
+  margin: auto;
+}
+
+.consultants .consultant-profile img {
+  width: 6rem;
+  height: 6rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: auto;
+  border-radius: 100%;
 }
 
 .form-control {
