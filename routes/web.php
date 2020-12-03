@@ -24,7 +24,9 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
     Route::get('/news', [NewsController::class, 'serve'])->name('home.news');
+    Route::get('/news/{id}', [NewsController::class, 'showContent'])->name('home.news.post');
     Route::get('/', function () {
         return redirect()->route('home.news');
     })->name('home');

@@ -18,4 +18,9 @@ class LoginController extends Controller
         }
         else return redirect()->back()->withErrors(['auth' => 'Wrong email or password']);
     }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('auth.login');
+    }
 }
