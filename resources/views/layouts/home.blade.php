@@ -22,7 +22,7 @@
         <a href="{{route('home.consultants')}}">
             <i class="fas fa-stethoscope"></i>
         </a>
-        <a href="#">
+        <a href="{{route('home.track')}}">
             <i class="fas fa-chart-line"></i>
         </a>
         <a href="{{route('auth.logout')}}">

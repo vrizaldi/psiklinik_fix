@@ -37,4 +37,8 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function logs() {
+        return $this->hasMany('logs', 'user_email', 'email');
+    }
 }

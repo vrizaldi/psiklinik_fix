@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Home\NewsController;
 use App\Http\Controllers\Home\ConsultantController;
+use App\Http\Controllers\MoodTrackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,16 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::middleware('auth')->group(function() {
-    Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
-    Route::get('/news', [NewsController::class, 'serve'])->name('home.news');
-    Route::get('/news/{id}', [NewsController::class, 'showContent'])->name('home.news.post');
-    Route::get('/consultants', [ConsultantController::class, 'serve'])->name('home.consultants');
-    Route::get('/consultants/{email}', [ConsultantController::class, 'showConsultant'])->name('home.consultants.consult');
+    Route::middleware('quized')->group(function() {
+        Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
+        Route::get('/news', [NewsController::class, 'serve'])->name('home.news');
+        Route::get('/news/{id}', [NewsController::class, 'showContent'])->name('home.news.post');
+        Route::get('/consultants', [ConsultantController::class, 'serve'])->name('home.consultants');
+        Route::get('/consultants/{email}', [ConsultantController::class, 'showConsultant'])->name('home.consultants.consult');
+        Route::get('/track', [MoodTrackController::class, 'serve'])->name('home.track');
+    });
+    Route::get('/track/quiz', [MoodTrackController::class, 'showQuiz'])->name('home.track.quiz');
+    Route::get('/track/quiz/submit', [MoodTrackController::class, 'answerQuiz'])->name('home.track.quiz.submit');
     Route::get('/', function () {
         return redirect()->route('home.news');
     })->name('home');

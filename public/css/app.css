@@ -11025,6 +11025,20 @@ a:visited {
   border-radius: 100%;
 }
 
+.mental-progress {
+  width: 90%;
+  margin: auto;
+}
+
+.mental-progress #chart-container {
+  height: 14rem;
+}
+
+.mental-progress .progress-report {
+  height: 14rem;
+  overflow: scroll;
+}
+
 .form-control {
   font-size: 0.8rem;
   padding: 1.2rem 1.2rem;
